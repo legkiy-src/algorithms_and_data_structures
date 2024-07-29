@@ -1,6 +1,6 @@
 <?php
 
-class ArrayBubble
+class ArraySelect
 {
     private array $arr = [];
     private int $nElems = 0;
@@ -22,10 +22,12 @@ class ArrayBubble
 
     public function sort(): void
     {
-        for ($out = $this->nElems - 1; $out > 1; $out--) {
-            for ($in = 0; $in < $out; $in++) {
-                if ($this->arr[$in] > $this->arr[$in + 1]) {
-                    $this->swap($in, $in + 1);
+        for ($out = 0; $out < $this->nElems - 1; $out++) {
+            $min = $out;
+            for ($in = $out + 1; $in < $this->nElems; $in++) {
+                if ($this->arr[$in] < $this->arr[$min]) {
+                    $min = $in;
+                    $this->swap($out, $min);
                 }
             }
         }

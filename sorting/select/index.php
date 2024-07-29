@@ -1,8 +1,9 @@
 <?php
 
-require_once __DIR__ . '/ArrayBubble.php';
+require_once __DIR__ . '/ArraySelect.php';
 
-$arrayBubble = new ArrayBubble();
+$maxSize = 100;
+$arrayBubble = new ArraySelect();
 
 $arrayBubble->insert(77);
 $arrayBubble->insert(99);
